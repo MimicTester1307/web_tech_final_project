@@ -6,3 +6,4 @@ include "../templates/_header.php";
 
 
 
+include "../templates/_footer.php";
