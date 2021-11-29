@@ -1,0 +1,42 @@
+/* @media screen and (min-width: 992px) {
+  .carousel-image {
+    height: 1273.11px;
+    width: 1907px;
+  }
+}
+
+@media screen and (max-width: 933px) {
+  .carousel-image {
+    height: 632.217px;
+    width: 947px;
+  }
+} */
+
+/* Carousel Images */
+.carousel-image {
+  height: 50em;
+  max-width: 100%;
+}
+
+/* Testimonial Container */
+.superior-results-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Testimonial header */
+.superior-results-header {
+  margin: 50px 0px;
+}
+
+/* Testimonial Customer Name */
+.customer-name {
+  display: block;
+  margin-top: 20px;
+}
+
+/* Testimonial paragraph */
+.success-story {
+  text-align: center;
+}
