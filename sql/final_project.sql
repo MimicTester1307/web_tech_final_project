@@ -97,14 +97,14 @@ CREATE TABLE `Event_Registration` (
 
 
 -- Contact_Us TABLE
-CREATE TABLE `Contact_Us` {
+CREATE TABLE `Contact_Us` (
     `first_name` VARCHAR(50) NOT NULL,
     `last_name` VARCHAR(50) NOT NULL,
     `email` VARCHAR(50) NOT NULL,
     `industry` VARCHAR(20) NOT NULL,
     `country` VARCHAR(50) NOT NULL,
     `message` VARCHAR(200) NOT NULL
-}
+);
 --
 -- Index Creation
 --
