@@ -85,6 +85,26 @@ CREATE TABLE `Patent_Inventor` (
                                    FOREIGN KEY (employee_id) REFERENCES Employee(employee_id) ON DELETE CASCADE
 );
 
+
+-- Event_Registration TABLE
+CREATE TABLE `Event_Registration` (
+    `event_id` INTEGER NOT NULL,
+    `participant_first_name` VARCHAR(50) NOT NULL,
+    `participant_last_name` VARCHAR(50) NOT NULL,
+
+    FOREIGN KEY (event_id) REFERENCES Events(event_id) ON DELETE CASCADE
+);
+
+
+-- Contact_Us TABLE
+CREATE TABLE `Contact_Us` {
+    `first_name` VARCHAR(50) NOT NULL,
+    `last_name` VARCHAR(50) NOT NULL,
+    `email` VARCHAR(50) NOT NULL,
+    `industry` VARCHAR(20) NOT NULL,
+    `country` VARCHAR(50) NOT NULL,
+    `message` VARCHAR(200) NOT NULL
+}
 --
 -- Index Creation
 --
@@ -153,9 +173,9 @@ VALUES ('online', '2021-05-04 11-51-56'),
 INSERT INTO Events(event_name, event_date, event_speakers)
 VALUES ('Online Cybersecurity Expert Discussion', '2021-03-18 13:00:00', 'Matt Areno, Steve Edwards, Irby Thompson, Cal Biesecker'),
        ('Open Source, Military Systems and Cybersecurity', '2020-05-06 12:00:00', 'Glenn Seiler, Michael Mehlberg, Matt Jones, John Keller'),
-       ('Clearing the Skies of Cybersecurity Vulnerabilities From the Ground Up', '2021-06-02 09:00:00', 'Michael Gale, Thomas Rosen, Nikhil Chauhan'),
+       ('Clearing the Skies of Cybersecurity Vulnerabilities From the Ground Up', '2021-12-02 09:00:00', 'Michael Gale, Thomas Rosen, Nikhil Chauhan'),
        ('Embedded World 2021', '2021-03-05 08:00:00', 'Kevin Dallas, Paul Miller Jr., Matt Jones'),
-       ('Wind River Security Summit', '2021-05-18 09:00:00', 'Window Snyder, David Bray, Eric Cole, Wendy Frank');
+       ('Wind River Security Summit', '2021-11-18 09:00:00', 'Window Snyder, David Bray, Eric Cole, Wendy Frank');
 
 
 -- Patents Table
