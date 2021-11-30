@@ -57,14 +57,6 @@ CREATE TABLE `Products` (
                             PRIMARY KEY (`product_id`)
 );
 
--- Patent table
-CREATE TABLE `Patents` (
-                           `patent_number` INTEGER,
-                           `patent_description` VARCHAR(100) NOT NULL,
-                           `patent_type` VARCHAR(10),
-
-                           PRIMARY KEY (`patent_number`)
-);
 
 -- Event table
 CREATE TABLE `Events` (
@@ -74,15 +66,6 @@ CREATE TABLE `Events` (
                           `event_speakers` VARCHAR(100) NOT NULL,
 
                           PRIMARY KEY (event_id)
-);
-
--- Patent_Inventor Table
-CREATE TABLE `Patent_Inventor` (
-                                   `patent_number` INTEGER NOT NULL,
-                                   `employee_id` INTEGER NOT NULL,
-
-                                   FOREIGN KEY (patent_number) REFERENCES Patents(patent_number),
-                                   FOREIGN KEY (employee_id) REFERENCES Employee(employee_id) ON DELETE CASCADE
 );
 
 
