@@ -53,6 +53,7 @@ CREATE TABLE `Products` (
                             `product_category` ENUM('Operating Systems', 'Embedded Systems', 'Cyber Security') NOT NULL,
                             `product_version` VARCHAR(5),
                             `product_description` VARCHAR(100),
+                            `product_image` BLOB NOT NULL,
 
                             PRIMARY KEY (`product_id`)
 );
@@ -161,17 +162,6 @@ VALUES ('Online Cybersecurity Expert Discussion', '2021-03-18 13:00:00', 'Matt A
        ('Wind River Security Summit', '2021-11-18 09:00:00', 'Window Snyder, David Bray, Eric Cole, Wendy Frank');
 
 
--- Patents Table
-INSERT INTO Patents
-VALUES (10929201, 'Method and system for implementing generation locks', 'Grant'),
-       (10887078, 'Device, system, and method for determining a forwading delay through a network device', 'Grant'),
-       (10728420, 'Lossy compression for images and signals by identifying regions with low density features', 'Grant'),
-       (10678744, 'Method and system for lockless interprocessor communication', 'Grant'),
-       (10459722, 'Device, system, and method for secure supervisor system calls', 'Grant'),
-       (10438005, 'Device, system, and method for protecting cryptographic keying material', 'Grant'),
-       (10152331, 'Method and sytem for enforcing kernel mode access protection', 'Grant'),
-       (10055155, 'Secure system on chip', 'Grant');
-
 -- System_Maintainer
 INSERT INTO System_Maintainer
 VALUES (1, 1, 'available', 'all system checks passed'),
@@ -181,35 +171,20 @@ VALUES (1, 1, 'available', 'all system checks passed'),
        (5, 18, 'available', 'all system checks passed');
 
 -- Products
-INSERT INTO Products(product_name, product_category, product_version, product_description)
-VALUES ('Titanium Secure Hypervisor', 'Embedded Systems', '3.5', 'Offers secure, open-source virtualization for embedded systems'),
-       ('Titanium Linux', 'Cyber Security', '1.02', 'The most robust Linux system-hardening and security capabilities'),
-       ('Titanium Secure Boot', 'Operating Systems', '5.0', 'The strongest, most flexible boot-time authentication and trust for Linux on Intel chipsets'),
-       ('Wind River Diab Compiler', 'Embedded Systems', '2.1', 'Produce high-quality, standards-compliant object code for embedded systems'),
-       ('VxWorks', 'Operating Systems', '10.1', 'The Leading RTOS for the Intelligent Edge'),
-       ('Crucible Embedded Virtualization Software', 'Operating Systems', '8.0', 'Maintain secure, high-quality guest environments');
-
--- Patent_Inventor 19 - 27
-INSERT INTO Patent_Inventor
-VALUES (10929201, 19),
-       (10929201, 20),
-       (10887078, 20),
-       (10887078, 19),
-       (10728420, 21),
-       (10678744, 22),
-       (10678744, 23),
-       (10459722, 23),
-       (10438005, 24),
-       (10152331, 25),
-       (10152331, 26),
-       (10055155, 27);
+INSERT INTO Products(product_name, product_category, product_version, product_description, product_image)
+VALUES ('Titanium Secure Hypervisor', 'Embedded Systems', '3.5', 'Offers secure, open-source virtualization for embedded systems', 'titanium_hypervisor.jpg'),
+       ('Titanium Linux', 'Cyber Security', '1.02', 'The most robust Linux system-hardening and security capabilities', 'titanium_linux.jpg'),
+       ('Titanium Secure Boot', 'Operating Systems', '5.0', 'The strongest, most flexible boot-time authentication and trust for Linux on Intel chipsets', 'titanium_secure_boot.jpg'),
+       ('Wind River Diab Compiler', 'Embedded Systems', '2.1', 'Produce high-quality, standards-compliant object code for embedded systems', 'windriver-diab.png'),
+       ('VxWorks', 'Operating Systems', '10.1', 'The Leading RTOS for the Intelligent Edge', 'windriver-helix.png'),
+       ('Helix Virtualization Platform', 'Operating Systems', '8.0', 'Maintain secure, high-quality guest environments', 'windriver-vxworks.jpg');
 
 
 -- Queries
 -- Functionality 1
 -- GROUP BY won't work because under the hood, enums are treated as integers
 SELECT Products.product_category, Products.product_name, Products.product_description
-FROM Products WHERE Products.product_category IN ('Operating Systems', 'Embedded Systems')
+FROM Products WHERE Products.product_category IN ('Operating Systems', 'Embedded Systems', 'Cyber Security')
 ORDER BY Products.product_category;
 
 -- Functionality 2
@@ -220,14 +195,6 @@ ORDER BY Events.event_date;
 
 
 -- Functionality 3
--- Mention that if you check back, you'll see that this is the exact number of employees in each department. So the company has to employ more experts in anti-tamper technology, applied cryptography, and other departments with less than 4 employees
-SELECT Department.dept_name, COUNT(Employee.employee_department) AS number_of_employees
-FROM Department
-         INNER JOIN Employee
-                    ON Department.dept_id = Employee.employee_department
-GROUP BY Employee.employee_department;
-
--- Functionality 4
 SELECT Systems.system_id, Systems.system_status, Systems.date_of_last_check, System_Maintainer.maintainer_comments, Employee.first_name, Employee.last_name, System_Maintainer.maintainer_availability
 FROM Systems
          INNER JOIN System_Maintainer
@@ -236,20 +203,12 @@ FROM Systems
                     ON System_Maintainer.employee_id = Employee.employee_id
 WHERE System_Maintainer.maintainer_availability = 'available';
 
--- Functionality 5
-SELECT Employee.first_name, Employee.last_name, COUNT(Patents.patent_number) AS Number_of_Patents
-FROM Patents
-         INNER JOIN Patent_Inventor
-                    ON Patents.patent_number = Patent_Inventor.patent_number
-         INNER JOIN Employee
-                    ON Employee.employee_id = Patent_Inventor.employee_id
-GROUP BY Employee.employee_id;
 
 
--- Functionality 6: Updating the System Status of a System (systems 3 and 2)
+-- Functionality 4: Updating the System Status of a System (systems 3 and 2)
 UPDATE Systems
 SET system_status = 'online', date_of_last_check = (SELECT CURRENT_TIMESTAMP)
 WHERE system_id = 2 AND system_id = 3;
 
--- Functionality 7: Removing an employee from the employee table when the employee leaves the company
+-- Functionality 5: Removing an employee from the employee table when the employee leaves the company
 DELETE FROM Employee WHERE employee_id = 13;    # safe due to ON DELETE CASCADE
