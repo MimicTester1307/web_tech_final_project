@@ -34,24 +34,27 @@ class Database
      */
     public function runQuery($query)
     {
-        if (!$this->openConnection() || $this->database === null) {
-            return False;
+        if (!$this->openConnection() || $this->database == null) {
+            return false;
         }
 
         // Executing the query
         $this->result = mysqli_query($this->database, $query);
 
-        if ($this->result) return True;
-        else return False;
+        if ($this->result == false) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     /**
      * This function fetches the results of a query
      * @param null
      */
-    public function fetchResult()
+    public function fetchResults()
     {
-        if (!$this->result) return False;
+        if (!$this->result) return false;
 
         return mysqli_fetch_assoc($this->result);
     }
