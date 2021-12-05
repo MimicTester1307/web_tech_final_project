@@ -19,7 +19,7 @@ CREATE TABLE `Employee` (
                             `employee_id` INTEGER AUTO_INCREMENT,
                             `first_name` VARCHAR(50) NOT NULL,
                             `last_name` VARCHAR(50) NOT NULL,
-                            `employee_email` VARCHAR(50) NOT NULL CHECK(employee_email LIKE '%@%'),
+                            `employee_email` VARCHAR(50) NOT NULL,
                             `employee_department` INTEGER NOT NULL,
 
                             PRIMARY KEY (`employee_id`),
@@ -38,7 +38,7 @@ CREATE TABLE `Systems` (
 -- System_Maintainer table
 CREATE TABLE `System_Maintainer` (
                                      `system_id` INTEGER,
-                                     `employee_id` INTEGER, -- CHECK(employee_id NOT IN (SELECT Employee.employee_id FROM Employee WHERE Employee.employee_department = 6 OR 7)), -- A system maintainer cannot be someone in marketing or management department
+                                     `employee_id` INTEGER,
                                      `maintainer_availability` ENUM('available', 'unavailable'),
                                      `maintainer_comments` VARCHAR(75) NOT NULL,
 
