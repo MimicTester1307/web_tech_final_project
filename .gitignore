@@ -1,2 +1,4 @@
 .idea
 sql_stubs.txt
+composer.lock
+vendor
