@@ -1,6 +1,7 @@
 <?php
 $title = "Contact Us";
 include "../templates/_header.php";
+include "../validation/contact_form_validate.php";
 ?>
 
 <section id="contact-form-section">
@@ -15,11 +16,11 @@ include "../templates/_header.php";
 
         <!-- Email -->
         <label for="contact-email">Business Email</label><span style="color: red !important; display: inline; float: none;">*</span>
-        <input type="text" id="contact-email" name="email" required>
+        <input type="text" id="contact-email" name="contact-email" required>
 
         <!-- Industry -->
         <label for="contact-industry">Industry</label><span style="color: red !important; display: inline; float: none;">*</span>
-        <select id="contact-industry" name="industry" required>
+        <select id="contact-industry" name="contact-industry" required>
             <option value="">Select...</option>
             <option value="Aerospace & Defence">Aerospace & Defence</option>
             <option value="Automotive">Automotive</option>
@@ -31,7 +32,7 @@ include "../templates/_header.php";
 
         <!-- Country -->
         <label for="country">Country</label><span style="color: red !important; display: inline; float: none;">*</span>
-        <select id="country" name="country" class="form-control" required>
+        <select id="country" name="contact-country" class="form-control" required>
             <option value="">Select...</option>
             <option value="Afghanistan">Afghanistan</option>
             <option value="Åland Islands">Åland Islands</option>
@@ -281,15 +282,19 @@ include "../templates/_header.php";
 
         <!-- Message -->
         <label for="contact-message">Message</label><span style="color: red !important; display: inline; float: none;">*</span>
-        <textarea id="contact-message" name="message" rows="10" cols="20" required maxlength="200">
+        <textarea id="contact-message" name="contact-message" rows="10" cols="20" required maxlength="200">
         </textarea>
 
         <!-- File -->
         <label for="message-file">Upload a file:</label>
-        <input type="file" id="message-file" accept="image/png, image/jpeg, image/jpg">
+        <input type="file" id="message-file" name="contact-file" accept="image/png, image/jpeg, image/jpg, .pdf, .doc, .docx"> <!-- specify acceptd file types -->
+
+        <!-- Button -->
+        <button name="contact-submit">Submit</button>
 
     </form>
 </section>
+
 
 <?php
 include "../templates/_footer.php";
