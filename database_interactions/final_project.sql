@@ -87,7 +87,8 @@ CREATE TABLE `Contact_Us` (
     `email` VARCHAR(50) NOT NULL,
     `industry` VARCHAR(20) NOT NULL,
     `country` VARCHAR(50) NOT NULL,
-    `message` VARCHAR(200) NOT NULL
+    `contact_message` VARCHAR(200) NOT NULL,
+    `contact_file` MEDIUMBLOB
 );
 --
 -- Index Creation
