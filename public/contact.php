@@ -4,7 +4,7 @@ include "../templates/_header.php";
 include "../validation/contact_form_validate.php";
 ?>
 
-<section id="contact-form-section">
+<section id="contact-form-section" class="container">
     <form method="POST">
         <!-- First Name -->
         <label for="contact-first-name">First Name</label><span style="color: red !important; display: inline; float: none;">*</span>
@@ -295,6 +295,22 @@ include "../validation/contact_form_validate.php";
     </form>
 </section>
 
+
+<?php
+// Entering the validated data into the database
+// Check if the button has been clicked
+if (isset($_POST["contact-submit"])) {
+    if (validateContactForm()) {
+        if (updateContactTable($firstName, $lastName, $email, $industry, $country, $message, $file)) {
+            echo "Form submitted successfully. We will be in touch soon";
+        } else {
+            echo "There was an error submitting the form. Please try again later.";
+        }
+    } else {
+        return false;
+    }
+}
+?>
 
 <?php
 include "../templates/_footer.php";
