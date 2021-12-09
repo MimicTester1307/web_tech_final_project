@@ -1,13 +1,40 @@
 <?php
-// Check if the button has been clicked
-if (isset($_POST["contact-submit"])) {
-    $formErrors = []; // Array for storing form errors
-    $acceptedFileTypes = ["image/png", "image/jpeg", "image/jpg", ".pdf", ".doc", ".docx"];    // array of accected file types for file uploads
+include "../database_interactions/database_controller.php";
+
+// if (!isset($_POST["contact-submit"])) {
+//     header("Location: ../public/contact.php");
+//     exit;
+// }
+
+$formErrors = []; // Array for storing form errors
+$acceptedFileTypes = ["image/png", "image/jpeg", "image/jpg", ".pdf", ".doc", ".docx"];    // array of accected file types for file uploads
+
+$firstName;
+$lastName;
+$email;
+$industry;
+$country;
+$message;
+$file;
+
+function validateContactForm()
+{
+    global $firstName;
+    global $lastName;
+    global $email;
+    global $industry;
+    global $country;
+    global $message;
+    global $file;
+
+    global $acceptedFileTypes;
+    global $formErrors;
+
 
     // Form validation; using htmlspecialchars to prevent XSS or SQL Injection
 
     // Check if first name is empty or does not meet regex requirements
-    if (empty($_POST["first_name"]) || !preg_match("/^[a-zA-Z-' ]*$/", $_POST["first_name"])) {
+    if (empty($_POST["first_name"]) || !preg_match("/^[a-zA-Z-']*$/", $_POST["first_name"])) {
         $formErrors["contact-first-name"] = "First name is required or your entered first name invalid. <br />";
         echo "<strong>" . $formErrors["contact-first-name"] . "</strong>";
     } else {
@@ -15,7 +42,7 @@ if (isset($_POST["contact-submit"])) {
     }
 
     // check if last name is empty or does not meet regex requirements
-    if (empty($_POST["last_name"]) || !preg_match("/^[a-zA-Z-' ]*$/", $_POST["last_name"])) {
+    if (empty($_POST["last_name"]) || !preg_match("/^[a-zA-Z-']*$/", $_POST["last_name"])) {
         $formErrors["contact-last-name"] = "Last name is required or your entered last name is invalid. <br />";
         echo "<strong>" . $formErrors["contact-last-name"] . "</strong>";
     } else {
@@ -61,5 +88,17 @@ if (isset($_POST["contact-submit"])) {
     if (!$acceptedFileTypes[$mimeType]) {
         $formErrors["contact-file-upload"] = "Please upload a valid file";
         echo "<strong>" . $formErrors["contact-file-upload"] . "</strong>";
+    } else {
+        $file = $_POST["contact-file"];
+    }
+
+    if (empty($formErrors)) {
+        echo "Empty";
+        return true;
+    } else {
+        echo "Not Empty";
+        return false;
     }
 }
+
+validateContactForm();
