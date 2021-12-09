@@ -17,7 +17,7 @@ $title = $title ?? "Web Technologies Final Project";
 <body>
     <header>
         <!-- Navigation Bar -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
             <div class="container">
                 <a class="navbar-brand" href="#">
                     <img src="../assets/Logo+-+Star+Lab+Wind+River+Knockout.png" alt="Logo" width="240" height="53.91">
