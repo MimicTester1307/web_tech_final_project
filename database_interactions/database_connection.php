@@ -56,7 +56,7 @@ class Database
     {
         if (!$this->result) return false;
 
-        return mysqli_fetch_assoc($this->result);
+        return mysqli_fetch_all($this->result, MYSQLI_ASSOC);
     }
 }
 

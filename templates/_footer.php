@@ -4,7 +4,7 @@
 <footer class="text-center text-lg-start bg-dark text-muted sticky-bottom d-flex justify-content-center items-align-center">
         <div class="container">
                 <div>
-                        <img src="/assets/Logo+-+Star+Lab+Wind+River+Knockout.png" alt="Star Lab Logo" width="240" height="53.91">
+                        <img src="../assets/Logo+-+Star+Lab+Wind+River+Knockout.png" alt="Star Lab Logo" width="240" height="53.91">
 
                 </div>
 
