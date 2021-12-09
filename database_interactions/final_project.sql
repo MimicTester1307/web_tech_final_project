@@ -53,7 +53,7 @@ CREATE TABLE `Products` (
                             `product_category` ENUM('Operating Systems', 'Embedded Systems', 'Cyber Security') NOT NULL,
                             `product_version` VARCHAR(5),
                             `product_description` VARCHAR(100),
-                            `product_image` BLOB NOT NULL,
+                            `product_image` TEXT NOT NULL,
 
                             PRIMARY KEY (`product_id`)
 );
