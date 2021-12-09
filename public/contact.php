@@ -284,6 +284,10 @@ include "../templates/_header.php";
         <textarea id="contact-message" name="message" rows="10" cols="20" required maxlength="200">
         </textarea>
 
+        <!-- File -->
+        <label for="message-file">Upload a file:</label>
+        <input type="file" id="message-file" accept="image/png, image/jpeg, image/jpg">
+
     </form>
 </section>
 
