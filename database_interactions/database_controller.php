@@ -54,7 +54,7 @@ function fetchEvents()
  * controller function for updating contact table from contact form
  */
 
-function updateContactTable($firstName, $lastName, $email, $industry, $country, $message, $file)
+function updateContactTable($firstName, $lastName, $email, $industry, $country, $message, $file = null)
 {
     $crud = new CRUD;
     $request = $crud->updateContactTable($firstName, $lastName, $email, $industry, $country, $message, $file);
