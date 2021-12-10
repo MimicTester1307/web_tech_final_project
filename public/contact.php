@@ -298,11 +298,13 @@ include "../validation/contact_form_validate.php";
 
 <?php
 // Entering the validated data into the database
-// Check if the button has been clicked
+// // Check if the button has been clicked
 if (isset($_POST["contact-submit"])) {
-    if (validateContactForm()) {
-        if (updateContactTable($firstName, $lastName, $email, $industry, $country, $message, $file)) {
-            echo "Form submitted successfully. We will be in touch soon";
+    $formIsValid = validateContactForm();
+    if ($formIsValid) {
+        $updateTable = updateContactTable($firstName, $lastName, $email, $industry, $country, $message, $file);
+        if ($updateTable) {
+            echo "Form submitted successfully. We will be in touch soon.";
         } else {
             echo "There was an error submitting the form. Please try again later.";
         }
