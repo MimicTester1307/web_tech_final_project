@@ -19,7 +19,7 @@ $title = $title ?? "Admin Dashboard";
 
 <body>
     <!-- Side Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5 fixed-top">
         <div class="container-fluid">
             <!-- OffCanvas Trigger -->
             <button class="navbar-toggler me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
@@ -58,3 +58,77 @@ $title = $title ?? "Admin Dashboard";
 
         </div>
     </nav>
+
+    <!-- OffCanvas -->
+    <div class="offcanvas offcanvas-start bg-dark text-white sidebar-nav" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+
+        <!-- Offcanvas body -->
+        <div class="offcanvas-body p-0">
+            <nav class="navbar-dark">
+                <ul class="navbar-nav">
+                    <!-- Section 1: Core -->
+                    <li>
+                        <div class="text-muted small fw-bold text-uppercase px-3 py-3">
+                            CORE
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="#" class="nav-link px-3 active">
+                            <span class="me-2">
+                                <i class="bi bi-speedometer2"></i>
+                            </span>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+
+                    <!-- Section 1 Divider -->
+
+                    <li class="my-4">
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <!-- Section 2: Systems -->
+                    <li>
+                        <div class="text-muted small fw-bold text-uppercase px-3 py-3">
+                            Systems
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="#" class="nav-link px-3 active">
+                            <span class="me-2">
+                                <i class="bi bi-activity"></i>
+                            </span>
+                            <span>Systems</span>
+                        </a>
+                    </li>
+
+                    <!-- Section 2 Divider -->
+
+                    <li class="my-4">
+                        <hr class="dropdown-divider">
+                    </li>
+
+
+                    <!-- Section 3: Employees -->
+                    <li>
+                        <div class="text-muted small fw-bold text-uppercase px-3 py-3">
+                            Employees
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="#" class="nav-link px-3 active">
+                            <span class="me-2">
+                                <i class="bi bi-people-fill"></i>
+                            </span>
+                            <span>Employees</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+        </div>
+    </div>
