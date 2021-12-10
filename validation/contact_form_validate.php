@@ -102,5 +102,3 @@ function validateContactForm()
         return false;
     }
 }
-
-// validateContactForm();

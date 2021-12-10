@@ -1,5 +1,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
 </script>
+<script src="../js/event-registration-pop.js"></script>
+<script src="../js/contact-success-modal.js"></script>
 
 <footer class="text-center text-lg-start bg-dark text-muted sticky-bottom d-flex justify-content-center items-align-center">
         <div class="container">
