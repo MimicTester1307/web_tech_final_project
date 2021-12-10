@@ -62,6 +62,22 @@ function updateContactTable($firstName, $lastName, $email, $industry, $country, 
     if ($request) {
         return true;
     } else {
+        return false;
+    }
+}
+
+
+/**
+ * controller function for updating the event registration table
+ */
+function updateEventRegistrationTable($firstName, $lastName, $email)
+{
+    $crud = new CRUD;
+    $request = $crud->updateEventRegistrationTable($firstName, $lastName, $email);
+
+    if ($request) {
         return true;
+    } else {
+        return false;
     }
 }
