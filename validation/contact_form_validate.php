@@ -82,23 +82,25 @@ function validateContactForm()
     }
 
 
-    // File upload validation using MIME type, rather than file extension
-    $fileInfo = new finfo(FILEINFO_MIME_TYPE);
-    $mimeType = $fileInfo->file($_POST["contact-file"]);
-    if (!$acceptedFileTypes[$mimeType]) {
-        $formErrors["contact-file-upload"] = "Please upload a valid file";
-        echo "<strong>" . $formErrors["contact-file-upload"] . "</strong>";
-    } else {
-        $file = $_POST["contact-file"];
+    // File upload validation using MIME type, rather than file extension,
+    // Will only execute if file is not empty
+    if (!empty($_POST["contact-file"])) {
+        $fileInfo = new finfo(FILEINFO_MIME_TYPE);
+        $mimeType = $fileInfo->file($_POST["contact-file"]);
+        if (!$acceptedFileTypes[$mimeType]) {
+            $formErrors["contact-file-upload"] = "Please upload a valid file";
+            echo "<strong>" . $formErrors["contact-file-upload"] . "</strong>";
+        } else {
+            $file = $_POST["contact-file"];
+        }
     }
 
+
     if (empty($formErrors)) {
-        echo "Empty";
         return true;
     } else {
-        echo "Not Empty";
         return false;
     }
 }
 
-validateContactForm();
+// validateContactForm();
