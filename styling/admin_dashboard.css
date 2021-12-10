@@ -14,6 +14,7 @@ button {
   width: var(--offcanvas-width);
 }
 
+/* Styling for larger screens */
 @media (min-width: 992px) {
   body {
     overflow: auto !important;
@@ -21,6 +22,11 @@ button {
   .offcanvas-backdrop {
     display: none;
   }
+
+  main {
+    margin-left: var(--offcanvas-width);
+  }
+
   .sidebar-nav {
     transform: none;
     visibility: visible !important;
