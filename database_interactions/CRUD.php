@@ -81,14 +81,47 @@ class CRUD extends Database
      * updates the event registration table when a user registers  -- should ideally send the user a link to the event, but did not implement that
      * @return mysqli_query_object
      */
-    public function updateEventRegistrationTable($firstName, $lastName, $email)
+    public function updateEventRegistrationTable($id, $firstName, $lastName, $email)
     {
-        $query = "INSERT INTO `Event_Registration`(participant_first_name, participant_last_name, participant_email) VALUES ('$firstName', '$lastName', '$email')";
+        $query = "INSERT INTO `Event_Registration`(event_id, participant_first_name, participant_last_name, participant_email) VALUES ('$id', '$firstName', '$lastName', '$email')";
+        return $this->runQuery($query);
+    }
+
+
+    /**
+     * Fetches all Employees in the company and their details
+     * @return mysqli_query_object
+     */
+    public function fetchEmployees()
+    {
+        $query = "SELECT * FROM `Employee`";
+        return $this->runQuery($query);
+    }
+
+
+    /**
+     * Fetches a single employee from the table
+     * @return mysqli_query_object
+     */
+    public function fetchEmployee($id)
+    {
+        $query = "SELECT * FROM `Employee` WHERE employee_id = '$id'";
+        return $this->runQuery($query);
+    }
+
+    /** 
+     * Deletes an Employee from the Table. Implements Soft Deletion
+     * @return mysqli_query_object
+     */
+    public function deleteEmployee($id)
+    {
+        $query = "DELETE FROM `Employee` WHERE employee_id = '$id'";
         return $this->runQuery($query);
     }
 }
 
 
+// $id = 3;
 // $first_name = "Excel";
 // $last_name = "Chukwu";
 // $email = "excel.chukwu@ashesi.edu.gh";
@@ -98,6 +131,6 @@ class CRUD extends Database
 // // $file = Null;
 
 // $crud = new CRUD;
-// if ($crud->updateEventRegistrationTable($first_name, $last_name, $email)) {
+// if ($crud->updateEventRegistrationTable($id, $first_name, $last_name, $email)) {
 //     echo "Done";
 // } else echo "False";
