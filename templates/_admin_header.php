@@ -53,9 +53,6 @@ $title = $title ?? "Admin Dashboard";
                     </li>
                 </ul>
             </div>
-
-
-
         </div>
     </nav>
 
@@ -73,8 +70,10 @@ $title = $title ?? "Admin Dashboard";
                         </div>
                     </li>
 
+                    <!-- Dashboard -->
+
                     <li>
-                        <a href="#" class="nav-link px-3 active">
+                        <a href="#" class="nav-link px-3">
                             <span class="me-2">
                                 <i class="bi bi-speedometer2"></i>
                             </span>
@@ -82,11 +81,6 @@ $title = $title ?? "Admin Dashboard";
                         </a>
                     </li>
 
-                    <!-- Section 1 Divider -->
-
-                    <li class="my-4">
-                        <hr class="dropdown-divider">
-                    </li>
 
                     <!-- Section 2: Systems -->
                     <li>
@@ -119,7 +113,7 @@ $title = $title ?? "Admin Dashboard";
                     </li>
 
                     <li>
-                        <a href="#" class="nav-link px-3 active">
+                        <a href="employee.php" class="nav-link px-3 active">
                             <span class="me-2">
                                 <i class="bi bi-people-fill"></i>
                             </span>

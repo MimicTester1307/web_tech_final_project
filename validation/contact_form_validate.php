@@ -49,7 +49,7 @@ function validateContactForm()
         $lastName = htmlspecialchars($_POST["last_name"]);
     }
 
-    // check if email emptyor is not well formed
+    // check if email empty or is not well formed
     if (empty($_POST["contact-email"]) || !filter_var($_POST["contact-email"], FILTER_VALIDATE_EMAIL)) {
         $formErrors["contact-email"] = "Email is required or not well formed. <br />";
         echo "<strong>" . $formErrors["contact-email"] . "</strong>";

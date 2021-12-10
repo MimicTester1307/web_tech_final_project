@@ -81,3 +81,24 @@ function updateEventRegistrationTable($firstName, $lastName, $email)
         return false;
     }
 }
+
+
+/**
+ * controller function for fetching system maintainer details
+ */
+function fetchSystemMaintainerDetails($email)
+{
+    $crud = new CRUD;
+    $request = $crud->fetchSystemMaintainerDetails($email);
+
+    if ($request) {
+        $record = $crud->fetchResults();
+        if (!empty($record)) {
+            return $record;
+        } else {
+            return [];
+        }
+    } else {
+        return False;
+    }
+}

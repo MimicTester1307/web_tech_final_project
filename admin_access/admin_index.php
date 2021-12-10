@@ -1,5 +1,11 @@
 <?php
 include "../templates/_admin_header.php";
+
+// Ensures that admin is recognized and signed in before loading page
+// if (!isset($_SESSION["admin-id"])) {
+//     header("Location: admin_login.php");
+//     exit;
+// }
 ?>
 
 

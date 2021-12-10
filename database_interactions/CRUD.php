@@ -44,6 +44,20 @@ class CRUD extends Database
     }
 
     /**
+     * Selects the system maintainer email and password because only them can log into the admin dashboard.
+     * @return mysqli_query_object
+     */
+    public function fetchSystemMaintainerDetails($email)
+    {
+        $query = "SELECT Employee.employee_id, Employee.employee_email, Employee.employee_password 
+        FROM `Employee` INNER JOIN System_Maintainer 
+        ON Employee.employee_id = System_Maintainer.employee_id 
+        AND Employee.employee_email='$email'";
+
+        return $this->runQuery($query);
+    }
+
+    /**
      * updates the system status and time of last_access
      * @return mysqli_query_object
      */
