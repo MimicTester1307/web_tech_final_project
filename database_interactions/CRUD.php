@@ -62,18 +62,28 @@ class CRUD extends Database
         $query = "INSERT INTO `Contact_Us`(first_name, last_name, email, industry, country, contact_message, contact_file) VALUES ('$firstName', '$lastName', '$email', '$industry', '$country', '$message', '$file')";
         return $this->runQuery($query);
     }
+
+    /**
+     * updates the event registration table when a user registers  -- should ideally send the user a link to the event, but did not implement that
+     * @return mysqli_query_object
+     */
+    public function updateEventRegistrationTable($firstName, $lastName, $email)
+    {
+        $query = "INSERT INTO `Event_Registration`(participant_first_name, participant_last_name, participant_email) VALUES ('$firstName', '$lastName', '$email')";
+        return $this->runQuery($query);
+    }
 }
 
 
 // $first_name = "Excel";
 // $last_name = "Chukwu";
 // $email = "excel.chukwu@ashesi.edu.gh";
-// $industry = "Automotive";
-// $country = "Nigeria";
-// $contact_message = "I love StarLab!";
-// $file = Null;
+// // $industry = "Automotive";
+// // $country = "Nigeria";
+// // $contact_message = "I love StarLab!";
+// // $file = Null;
 
 // $crud = new CRUD;
-// if ($crud->updateContactTable($first_name, $last_name, $email, $industry, $country, $contact_message, $file)) {
+// if ($crud->updateEventRegistrationTable($first_name, $last_name, $email)) {
 //     echo "Done";
 // } else echo "False";
