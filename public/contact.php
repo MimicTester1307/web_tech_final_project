@@ -8,19 +8,19 @@ include "../validation/contact_form_validate.php";
     <form method="POST">
         <!-- First Name -->
         <label for="contact-first-name">First Name</label><span style="color: red !important; display: inline; float: none;">*</span>
-        <input type="text" id="contact-first-name" name="first_name" required>
+        <input type="text" id="contact-first-name" name="first_name" class="form-control mb-3" required>
 
         <!-- Last Name -->
         <label for="contact-last-name">Last Name</label><span style="color: red !important; display: inline; float: none;">*</span>
-        <input type="text" id="contact-last-name" name="last_name" required>
+        <input type="text" id="contact-last-name" name="last_name" class="form-control mb-3" required>
 
         <!-- Email -->
         <label for="contact-email">Business Email</label><span style="color: red !important; display: inline; float: none;">*</span>
-        <input type="text" id="contact-email" name="contact-email" required>
+        <input type="text" id="contact-email" name="contact-email" class="form-control mb-3" required>
 
         <!-- Industry -->
         <label for="contact-industry">Industry</label><span style="color: red !important; display: inline; float: none;">*</span>
-        <select id="contact-industry" name="contact-industry" required>
+        <select id="contact-industry" name="contact-industry" class="form-control mb-3" required>
             <option value="">Select...</option>
             <option value="Aerospace & Defence">Aerospace & Defence</option>
             <option value="Automotive">Automotive</option>
@@ -32,7 +32,7 @@ include "../validation/contact_form_validate.php";
 
         <!-- Country -->
         <label for="country">Country</label><span style="color: red !important; display: inline; float: none;">*</span>
-        <select id="country" name="contact-country" class="form-control" required>
+        <select id="country" name="contact-country" class="form-control" class="form-control mb-3" required>
             <option value="">Select...</option>
             <option value="Afghanistan">Afghanistan</option>
             <option value="Åland Islands">Åland Islands</option>
@@ -282,15 +282,18 @@ include "../validation/contact_form_validate.php";
 
         <!-- Message -->
         <label for="contact-message">Message</label><span style="color: red !important; display: inline; float: none;">*</span>
-        <textarea id="contact-message" name="contact-message" rows="10" cols="20" required maxlength="200">
+        <textarea id="contact-message" name="contact-message" rows="10" cols="20" required maxlength="200" class="form-control mb-3">
         </textarea>
 
         <!-- File -->
         <label for="message-file">Upload a file:</label>
-        <input type="file" id="message-file" name="contact-file" accept="image/png, image/jpeg, image/jpg, .pdf, .doc, .docx"> <!-- specify acceptd file types -->
+        <input type="file" id="message-file" name="contact-file" class="form-control mb-3" accept="image/png, image/jpeg, image/jpg, .pdf, .doc, .docx"> <!-- specify acceptd file types -->
 
         <!-- Button -->
-        <button name="contact-submit">Submit</button>
+        <button name="contact-submit" class="mb-3 form-control bg-dark text-light">Submit</button>
+
+        <!-- Check this place for styling (the checkout form part)
+        https://mdbootstrap.com/docs/standard/forms/overview/ -->
 
     </form>
 </section>
