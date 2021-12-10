@@ -26,8 +26,7 @@ $events = fetchEvents();
                         <p class="card-text">
                             <small class="text-muted">' . $value["event_speakers"] . '</small>
                         </p>
-                        <input type="text" name="eventId" value=' . $value["event_id"] . ' id="eventId">
-                        <button type="button" class="btn btn-primary" id="event-registration-btn" name="register-button" data-bs-toggle="modal" data-bs-target="#event-registration-modal">Register to Watch on Demand</button>
+                        <button type="button" class="btn btn-primary" id="event-registration-btn" name="register-button" data-bs-toggle="modal" data-bs-target="#event-registration-modal" data-bs-whatever="' . $value["event_id"] . '">Register to Watch on Demand</button>
                         
                     </div>
                 </div>
@@ -70,7 +69,7 @@ $events = fetchEvents();
                         </div>
 
                         <!-- Hidden Input -->
-                        <!-- <input type="text" id="event-registration-id-modal" name="eventId-modal" /> -->
+                        <!-- <input type="text" id="event-registration-id-modal" class="hidden-modal-input" name="eventId-modal" value="<?php $value[' event_id'] ?>" /> -->
 
 
                         <!-- Submit button -->
