@@ -75,6 +75,7 @@ CREATE TABLE `Event_Registration` (
     `event_id` INTEGER NOT NULL,
     `participant_first_name` VARCHAR(50) NOT NULL,
     `participant_last_name` VARCHAR(50) NOT NULL,
+    `participant_email` VARCHAR(50) NOT NULL,
 
     FOREIGN KEY (event_id) REFERENCES Events(event_id) ON DELETE CASCADE
 );
