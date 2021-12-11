@@ -1,4 +1,6 @@
 <?php
-unset($_SESSION['admin-id']);
+session_start();
+$_SESSION = array();
+session_destroy();
 header("Location: admin_login.php");
 exit;

@@ -18,6 +18,7 @@ $systems = fetchSystems();
 
 
 <main class="mt-5 pt-5 container">
+    <?php print_r($_SESSION); ?>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 fw-bold fs-3 mb-3"> Systems </div>
