@@ -61,4 +61,8 @@ class Database
 }
 
 // $conn = new Database();
-// $conn->openConnection();
+// if ($conn->openConnection()) {
+//     echo "True";
+// } else {
+//     echo "False";
+// }

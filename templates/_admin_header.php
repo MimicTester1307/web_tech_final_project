@@ -72,7 +72,7 @@ $title = $title ?? "Admin Page";
                     <!-- Dashboard -->
 
                     <li>
-                        <a href="#" class="nav-link px-3">
+                        <a href="../admin_access/index.php" class="nav-link px-3">
                             <span class="me-2">
                                 <i class="bi bi-speedometer2"></i>
                             </span>
@@ -89,7 +89,7 @@ $title = $title ?? "Admin Page";
                     </li>
 
                     <li>
-                        <a href="#" class="nav-link px-3 active">
+                        <a href="../admin_access/index.php" class="nav-link px-3 active">
                             <span class="me-2">
                                 <i class="bi bi-activity"></i>
                             </span>

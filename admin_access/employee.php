@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Ensures that admin is recognized and signed in before loading page
 if (!isset($_SESSION["admin-id"])) {
     header("Location: admin_login.php");

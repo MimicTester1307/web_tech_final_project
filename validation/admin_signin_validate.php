@@ -1,13 +1,24 @@
 <?php
+session_start();
 include "../database_interactions/database_controller.php";
 
 // Array for storing form errors
 $adminFormErrors = [];
 
 
+
+$adminEmail;
+$adminPassword;
+
+// echo $adminEmail;
+// echo $adminPassword;
+
+
 if (isset($_POST["adminSignInButton"])) {
-    $adminEmail = trim($_POST["adminLoginEmail"]);
-    $adminPassword = trim($_POST["adminLoginPassword"]);
+    $adminEmail = $_POST["adminLoginEmail"];
+    $adminPassword = $_POST["adminLoginPassword"];
+
+
 
     // Checking if email is valid
     if (empty($adminEmail) || !filter_var($adminEmail, FILTER_VALIDATE_EMAIL)) {
@@ -17,6 +28,7 @@ if (isset($_POST["adminSignInButton"])) {
         $adminEmail = htmlspecialchars($adminEmail);
     }
 
+
     // checking if password is valid
     if (empty($adminPassword) || strlen($adminPassword) < 8) {
         $adminFormErrors["admin-password"] = "Password does not meet requirements";
@@ -25,13 +37,15 @@ if (isset($_POST["adminSignInButton"])) {
         $adminPassword = htmlspecialchars($adminPassword);
     }
 
+
     // checking if valid password matches corresponding database password
     $systemMaintainer = fetchSystemMaintainerDetails($adminEmail);
-    // echo ($systemMaintainer["employee_password"]);
-    if ($systemMaintainer && $systemMaintainer[0]["employee_password"] == base64_encode($adminPassword)) {
+
+    if (!empty($systemMaintainer) && $systemMaintainer[0]["employee_password"] == base64_encode($adminPassword)) {
         echo "<strong> Login Successful.</strong>";
+
         $_SESSION["admin-id"] = $systemMaintainer[0]["employee_id"];
-        header("Location: ../admin_access/admin_index.php");
+        header("Location: ../admin_access/index.php");
         exit;
     } else {
         $adminFormErrors["admin-email-password"] = "Invalid Email/Password Combination";
