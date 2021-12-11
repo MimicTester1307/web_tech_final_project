@@ -46,7 +46,7 @@ if (isset($_POST["eventEmail"])) {
 if (empty($eventFormErrors)) {
     $isTableUpdated = updateEventRegistrationTable($eventId, $firstName, $lastName, $email);
     if ($isTableUpdated) {
-        echo "Event Registration Successful!";
+        echo "Event Registration Successful. Please check your email for details!";
         return true;
     } else {
         echo "Event registration Unsuccessful";
