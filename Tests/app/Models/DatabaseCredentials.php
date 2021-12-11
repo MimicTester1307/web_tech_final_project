@@ -1,6 +1,11 @@
 <?php
-// Database Credentials
-define("SERVERNAME", "localhost");
-define("USERNAME", "excel");
-define("PASSWORD", "Galatians2:20");
-define("DATABASE", "Star_Lab_58282023_Test");
+
+namespace App\Models;
+
+final class DatabaseCredentials
+{
+    public $SERVERNAME = "localhost";
+    public $USERNAME = "excel";
+    public $PASSWORD = "Galatians2:20";
+    public $DATABASE = "Test_Star_Lab_58282023";
+}

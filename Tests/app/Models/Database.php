@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-require "DatabaseCredentials";
+use App\Models\DatabaseCredentials;
 
 class Database
 {
@@ -15,7 +15,9 @@ class Database
      */
     public function openConnection()
     {
-        $this->database = mysqli_connect(SERVERNAME, USERNAME, PASSWORD, DATABASE);
+        $credentials = new DatabaseCredentials;
+
+        $this->database = mysqli_connect($credentials->SERVERNAME, $credentials->USERNAME, $credentials->PASSWORD, $credentials->DATABASE);
 
         // Check connection status
         if (mysqli_connect_errno()) {
