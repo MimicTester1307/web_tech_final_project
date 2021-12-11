@@ -26,7 +26,7 @@ $employees = fetchEmployees();
                 <br>
 
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="' . $value["employee_id"] . '">
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#employee-choice-modal" data-bs-whatever="' . $value["employee_id"] . '">
                     Remove Employee from Database
                 </button>
             </div>
@@ -49,7 +49,7 @@ $employees = fetchEmployees();
                     Are you sure you want to delete this employee from the database?
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="removeEmployee()">Yes</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="deleteEmployee()">Yes</button>
                     <button type="button" class="btn btn-success">No</button>
                 </div>
             </div>
