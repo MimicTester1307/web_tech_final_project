@@ -4,5 +4,10 @@
     "symfony/panther": "^1.1",
     "symfony/css-selector": "^5.4",
     "symfony/mime": "^5.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "Tests/app"
+    }
   }
 }
