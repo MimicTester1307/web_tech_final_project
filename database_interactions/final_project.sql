@@ -182,35 +182,35 @@ VALUES ('Titanium Secure Hypervisor', 'Embedded Systems', '3.5', 'Offers secure,
        ('Helix Virtualization Platform', 'Operating Systems', '8.0', 'Maintain secure, high-quality guest environments', 'windriver-vxworks.jpg');
 
 
--- Queries
--- Functionality 1
--- GROUP BY won't work because under the hood, enums are treated as integers
-SELECT Products.product_category, Products.product_name, Products.product_description
-FROM Products WHERE Products.product_category IN ('Operating Systems', 'Embedded Systems', 'Cyber Security')
-ORDER BY Products.product_category;
+-- -- Queries
+-- -- Functionality 1
+-- -- GROUP BY won't work because under the hood, enums are treated as integers
+-- SELECT Products.product_category, Products.product_name, Products.product_description
+-- FROM Products WHERE Products.product_category IN ('Operating Systems', 'Embedded Systems', 'Cyber Security')
+-- ORDER BY Products.product_category;
 
--- Functionality 2
--- Mention the fact that there are events with dates in 2020 inserted, and events in 2021 before the 5th month
-SELECT Events.event_name, Events.event_speakers, Events.event_date
-FROM Events WHERE Events.event_date >= '2021-05-01 00:00:00'
-ORDER BY Events.event_date;
-
-
--- Functionality 3
-SELECT Systems.system_id, Systems.system_status, Systems.date_of_last_check, System_Maintainer.maintainer_comments, Employee.first_name, Employee.last_name, System_Maintainer.maintainer_availability
-FROM Systems
-         INNER JOIN System_Maintainer
-                    ON Systems.system_id = System_Maintainer.system_id
-         INNER JOIN Employee
-                    ON System_Maintainer.employee_id = Employee.employee_id
-WHERE System_Maintainer.maintainer_availability = 'available';
+-- -- Functionality 2
+-- -- Mention the fact that there are events with dates in 2020 inserted, and events in 2021 before the 5th month
+-- SELECT Events.event_name, Events.event_speakers, Events.event_date
+-- FROM Events WHERE Events.event_date >= '2021-05-01 00:00:00'
+-- ORDER BY Events.event_date;
 
 
+-- -- Functionality 3
+-- SELECT Systems.system_id, Systems.system_status, Systems.date_of_last_check, System_Maintainer.maintainer_comments, Employee.first_name, Employee.last_name, System_Maintainer.maintainer_availability
+-- FROM Systems
+--          INNER JOIN System_Maintainer
+--                     ON Systems.system_id = System_Maintainer.system_id
+--          INNER JOIN Employee
+--                     ON System_Maintainer.employee_id = Employee.employee_id
+-- WHERE System_Maintainer.maintainer_availability = 'available';
 
--- Functionality 4: Updating the System Status of a System (systems 3 and 2)
-UPDATE Systems
-SET system_status = 'online', date_of_last_check = (SELECT CURRENT_TIMESTAMP)
-WHERE system_id = 2 AND system_id = 3;
 
--- Functionality 5: Removing an employee from the employee table when the employee leaves the company
-DELETE FROM Employee WHERE employee_id = 13;    # safe due to ON DELETE CASCADE
+
+-- -- Functionality 4: Updating the System Status of a System (systems 3 and 2)
+-- UPDATE Systems
+-- SET system_status = 'online', date_of_last_check = (SELECT CURRENT_TIMESTAMP)
+-- WHERE system_id = 2 AND system_id = 3;
+
+-- -- Functionality 5: Removing an employee from the employee table when the employee leaves the company
+-- DELETE FROM Employee WHERE employee_id = 13;    # safe due to ON DELETE CASCADE
