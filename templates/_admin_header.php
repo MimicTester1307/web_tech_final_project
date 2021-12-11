@@ -120,6 +120,21 @@ $title = $title ?? "Admin Page";
                         </a>
                     </li>
 
+                    <!-- Section 3 Divider -->
+
+                    <li class="my-4">
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li>
+                        <a href="../admin_access/logout.php" class="nav-link px-3 active">
+                            <span class="me-2">
+                                <i class="bi bi-box-arrow-right"></i>
+                            </span>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+
                 </ul>
 
             </nav>
