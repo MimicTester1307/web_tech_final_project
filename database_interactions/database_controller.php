@@ -54,7 +54,7 @@ function fetchEvents()
  * controller function for updating contact table from contact form
  */
 
-function updateContactTable($firstName, $lastName, $email, $industry, $country, $message, $file = null)
+function updateContactTable($firstName, $lastName, $email, $industry, $country, $message, $file)
 {
     $crud = new CRUD;
     $request = $crud->updateContactTable($firstName, $lastName, $email, $industry, $country, $message, $file);
@@ -187,3 +187,17 @@ function deleteEmployee($id)
 // } else {
 //     echo "False";
 // }
+
+// $id = 3;
+// $first_name = "Excel";
+// $last_name = "Chukwu";
+// $email = "excel.chukwu@ashesi.edu.gh";
+// $industry = "Automotive";
+// $country = "Nigeria";
+// $contact_message = "Looking forward to porting your technologies to Ghana!";
+// $file = Null;
+
+// // $crud = new CRUD;
+// if (updateContactTable($first_name, $last_name, $email, $industry, $country, $contact_message, $file)) {
+//     echo "Done";
+// } else echo "False";

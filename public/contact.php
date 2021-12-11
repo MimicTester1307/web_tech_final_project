@@ -290,32 +290,12 @@ include "../validation/contact_form_validate.php";
         <input type="file" id="message-file" name="contact-file" class="form-control mb-3" accept="image/png, image/jpeg, image/jpg, .pdf, .doc, .docx"> <!-- specify acceptd file types -->
 
         <!-- Button -->
-        <button name="contact-submit" class="mb-3 form-control bg-dark text-light">Submit</button>
+        <button type="submit" name="contact-submit" class="mb-3 form-control bg-dark text-light">Submit</button>
 
-        <!-- Check this place for styling (the checkout form part)
-        https://mdbootstrap.com/docs/standard/forms/overview/ -->
+
 
     </form>
 </section>
-
-
-<?php
-// Entering the validated data into the database
-// // Check if the button has been clicked
-if (isset($_POST["contact-submit"])) {
-    $formIsValid = validateContactForm();
-    if ($formIsValid) {
-        $updateTable = updateContactTable($firstName, $lastName, $email, $industry, $country, $message, $file);
-        if ($updateTable) {
-            echo "Form submitted successfully. We will be in touch soon.";
-        } else {
-            echo "There was an error submitting the form. Please try again later.";
-        }
-    } else {
-        return false;
-    }
-}
-?>
 
 <?php
 include "../templates/_footer.php";
