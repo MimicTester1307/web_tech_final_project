@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "../templates/_header.php";
 include "../validation/admin_signin_validate.php";
 ?>
@@ -7,14 +8,14 @@ include "../validation/admin_signin_validate.php";
     <form method="POST">
         <!-- Email input -->
         <div class="form-outline mb-4">
-            <input type="email" name="adminLoginEmail" class="form-control" required />
-            <label class="form-label" for="adminLoginEmail">Email address</label>
+            <input type="email" name="adminLoginEmail" id="admin-Login-Email" class="form-control" required />
+            <label class="form-label" for="admin-Login-Email">Email address</label>
         </div>
 
         <!-- Password input, includes regex for password patern recognition-->
         <div class="form-outline mb-4">
-            <input type="password" name="adminLoginPassword" class="form-control" required />
-            <label class=" form-label" for="adminLoginPassword">Password</label>
+            <input type="password" name="adminLoginPassword" id="admin-Login-Password" class="form-control" required />
+            <label class=" form-label" for="admin-Login-Password">Password</label>
         </div>
 
         <!-- 2 column grid layout for inline styling -->
@@ -27,7 +28,7 @@ include "../validation/admin_signin_validate.php";
                 </div>
             </div>
 
-            <div class="col justify-content-end">
+            <div class="col">
                 <!-- Simple link -->
                 <a href="#">Forgot password?</a>
             </div>
