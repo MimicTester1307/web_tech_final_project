@@ -3,25 +3,22 @@
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Panther\PantherTestCaseTrait;
 
-include ""
+require "DatabaseCredentialsTest.php";
+include "../database_interactions/database_connection.php";
 
+
+$databaseTestObject = new Database;
 
 final class DatabaseTest extends TestCase
 {
-    use PantherTestCaseTrait;
     /**
      * @test
      */
-
-    private $database;
-    private $result;
-
     public function testDatabaseConnection()
     {
-        $connection = new \App\Model\DatabaseConnection;
 
-        $connection->openConnection();
+        $databaseTestObject->openConnection();
 
-        $this->assertTrue(true);
+        $this->assertTrue($this->databaseTestObject);
     }
 }
