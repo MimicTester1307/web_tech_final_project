@@ -121,7 +121,7 @@ class CRUD extends Database
 }
 
 
-// // $id = 3;
+$id = 3;
 // $first_name = "Excel";
 // $last_name = "Chukwu";
 // $email = "excel.chukwu@ashesi.edu.gh";

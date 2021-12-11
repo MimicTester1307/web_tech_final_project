@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "../database_interactions/database_controller.php";
 
 $employeeId = $_POST["employeeId"];
