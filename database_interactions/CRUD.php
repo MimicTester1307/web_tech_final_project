@@ -52,7 +52,7 @@ class CRUD extends Database
         $query = "SELECT Employee.employee_id, Employee.employee_email, Employee.employee_password 
         FROM `Employee` INNER JOIN System_Maintainer 
         ON Employee.employee_id = System_Maintainer.employee_id 
-        AND Employee.employee_email='$email'";
+        WHERE Employee.employee_email='$email'";
 
         return $this->runQuery($query);
     }

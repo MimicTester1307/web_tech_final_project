@@ -10,7 +10,6 @@ include "../templates/_admin_header.php";
 include "../database_interactions/database_controller.php";
 
 $systems = fetchSystems();
-// print_r($systems);
 
 ?>
 

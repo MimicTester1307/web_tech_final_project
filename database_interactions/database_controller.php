@@ -180,3 +180,10 @@ function deleteEmployee($id)
         return false;
     }
 }
+
+
+// if (fetchSystemMaintainerDetails("ryantdeaux@starlab.io")) {
+//     echo "Done";
+// } else {
+//     echo "False";
+// }

@@ -4,13 +4,10 @@ include "../database_interactions/database_controller.php";
 // Array for storing form errors
 $adminFormErrors = [];
 
-// // Array for system maintainer details
-$systemMaintainers = fetchSystemMaintainerDetails("ryantdeaux@starlab.io");
-print_r($systemMaintainers);
 
 if (isset($_POST["adminSignInButton"])) {
     $adminEmail = trim($_POST["adminLoginEmail"]);
-    $adminPassword = trim($_POST["adminLoginPassword"]);    // encoding for comparison with database password
+    $adminPassword = trim($_POST["adminLoginPassword"]);
 
     // Checking if email is valid
     if (empty($adminEmail) || !filter_var($adminEmail, FILTER_VALIDATE_EMAIL)) {
@@ -20,7 +17,7 @@ if (isset($_POST["adminSignInButton"])) {
         $adminEmail = htmlspecialchars($adminEmail);
     }
 
-    // checking if email is valid
+    // checking if password is valid
     if (empty($adminPassword) || strlen($adminPassword) < 8) {
         $adminFormErrors["admin-password"] = "Password does not meet requirements";
         echo "<strong>" . $adminFormErrors["admin-password"] . "</strong>";
@@ -30,10 +27,10 @@ if (isset($_POST["adminSignInButton"])) {
 
     // checking if valid password matches corresponding database password
     $systemMaintainer = fetchSystemMaintainerDetails($adminEmail);
-    echo ($systemMaintainer["employee_password"]);
+    // echo ($systemMaintainer["employee_password"]);
     if ($systemMaintainer && $systemMaintainer[0]["employee_password"] == base64_encode($adminPassword)) {
         echo "<strong> Login Successful.</strong>";
-        $_SESSION["admin-id"] = $systemMaintainer["employee_id"];
+        $_SESSION["admin-id"] = $systemMaintainer[0]["employee_id"];
         header("Location: ../admin_access/admin_index.php");
         exit;
     } else {

@@ -22,14 +22,14 @@ include "../validation/admin_signin_validate.php";
             <div class="col d-flex justify-content-start">
                 <!-- Checkbox -->
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+                    <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
                     <label class="form-check-label" for="form1Example3"> Remember me </label>
                 </div>
             </div>
 
             <div class="col justify-content-end">
                 <!-- Simple link -->
-                <a href="#!">Forgot password?</a>
+                <a href="#">Forgot password?</a>
             </div>
         </div>
 
@@ -38,4 +38,4 @@ include "../validation/admin_signin_validate.php";
     </form>
 </div>
 <?php
-include "../templates/_footer.php";
+include "../templates/_admin_footer.php";
