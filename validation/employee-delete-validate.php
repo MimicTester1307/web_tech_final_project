@@ -9,15 +9,22 @@ if (isset($_SESSION["admin-id"]) && isset($_POST["employeeId"])) {
     // Convert the data to JSON
     $deletedEmployeeJsonData = json_encode($deletedEmployeeData, JSON_PRETTY_PRINT);
 
+    $fileName = "../hidden_details/deletedEmployeeData.json";
     // Save the employee data to a file
-    $deletedEmployeeDataFile = "../.hidden/deletedEmployeeData.json";
-    file_put_contents($deletedEmployeeDataFile, $deletedEmployeeJsonData);
+    $isFileWritten = file_put_contents("$fileName", $deletedEmployeeJsonData, FILE_APPEND);
 
-    // 'Delete' the data from database
-    $employeeIsDeleted = deleteEmployee($employeeId);
-    if ($employeeId) {
-        return "Employee deleted successfully";
+    // 'Delete' the data from database only if data has been written to file
+    if ($isFileWritten) {
+        $employeeIsDeleted = deleteEmployee($employeeId);
+
+        if ($employeeIsDeleted) {
+            echo "Employee deleted successfully";
+            return true;
+        } else {
+            echo "Employee deletion not successful. Please try again later";
+            return false;
+        }
     } else {
-        return "Employee deletion not successful. Please try again later";
+        return false;
     }
 }

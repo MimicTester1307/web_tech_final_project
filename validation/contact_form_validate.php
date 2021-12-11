@@ -1,11 +1,6 @@
 <?php
 include "../database_interactions/database_controller.php";
 
-// if (!isset($_POST["contact-submit"])) {
-//     header("Location: ../public/contact.php");
-//     exit;
-// }
-
 $formErrors = []; // Array for storing form errors
 $acceptedFileTypes = ["image/png", "image/jpeg", "image/jpg", ".pdf", ".doc", ".docx"];    // array of accected file types for file uploads
 

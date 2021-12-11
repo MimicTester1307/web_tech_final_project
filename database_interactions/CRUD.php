@@ -122,15 +122,15 @@ class CRUD extends Database
 
 
 // $id = 3;
-// $first_name = "Excel";
-// $last_name = "Chukwu";
-// $email = "excel.chukwu@ashesi.edu.gh";
+// // $first_name = "Excel";
+// // $last_name = "Chukwu";
+// // $email = "excel.chukwu@ashesi.edu.gh";
 // // $industry = "Automotive";
 // // $country = "Nigeria";
 // // $contact_message = "I love StarLab!";
 // // $file = Null;
 
 // $crud = new CRUD;
-// if ($crud->updateEventRegistrationTable($id, $first_name, $last_name, $email)) {
+// if ($crud->fetchEmployee($id)) {
 //     echo "Done";
 // } else echo "False";

@@ -21,7 +21,7 @@ $title = $title ?? "Web Technologies Final Project";
         <!-- Navigation Bar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
             <div class="container">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="../public/index.php">
                     <img src="../assets/Logo+-+Star+Lab+Wind+River+Knockout.png" alt="Logo" width="240" height="53.91">
                 </a>
                 <button class="navbar-toggler bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,16 +30,16 @@ $title = $title ?? "Web Technologies Final Project";
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="../public/index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Events</a>
+                            <a class="nav-link" href="../public/events.php">Events</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Products</a>
+                            <a class="nav-link" href="../public/products.php">Products</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact Us</a>
+                            <a class="nav-link" href="../public/contact.php">Contact Us</a>
                         </li>
                     </ul>
                 </div>
