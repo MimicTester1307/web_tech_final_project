@@ -70,10 +70,10 @@ function updateContactTable($firstName, $lastName, $email, $industry, $country, 
 /**
  * controller function for updating the event registration table
  */
-function updateEventRegistrationTable($firstName, $lastName, $email)
+function updateEventRegistrationTable($id, $firstName, $lastName, $email)
 {
     $crud = new CRUD;
-    $request = $crud->updateEventRegistrationTable($firstName, $lastName, $email);
+    $request = $crud->updateEventRegistrationTable($id, $firstName, $lastName, $email);
 
     if ($request) {
         return true;
@@ -100,5 +100,83 @@ function fetchSystemMaintainerDetails($email)
         }
     } else {
         return False;
+    }
+}
+
+
+/**
+ * controller function for fetching system data
+ */
+function fetchSystems()
+{
+    $crud = new CRUD;
+    $request = $crud->fetchSystems();
+
+    if ($request) {
+        $record = $crud->fetchResults();
+        if (!empty($record)) {
+            return $record;
+        } else {
+            return [];
+        }
+    } else {
+        return False;
+    }
+}
+
+
+/**
+ * Controller function for fetching employee data
+ */
+
+function fetchEmployees()
+{
+    $crud = new CRUD;
+    $request = $crud->fetchEmployees();
+
+    if ($request) {
+        $record = $crud->fetchResults();
+        if (!empty($record)) {
+            return $record;
+        } else {
+            return [];
+        }
+    } else {
+        return False;
+    }
+}
+
+/**
+ * Controller function for fetching a single employee record
+ */
+
+function fetchEmployee($id)
+{
+    $crud = new CRUD;
+    $request = $crud->fetchEmployee($id);
+
+    if ($request) {
+        $record = $crud->fetchResults();
+        if (!empty($record)) {
+            return $record;
+        } else {
+            return [];
+        }
+    } else {
+        return False;
+    }
+}
+/**
+ * Controller function for deleting an employee
+ */
+function deleteEmployee($id)
+{
+    $crud = new CRUD;
+    $request = $crud->deleteEmployee($id);
+
+    if ($request) {
+        return true;
+    } else {
+        return false;
     }
 }
