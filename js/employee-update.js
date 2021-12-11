@@ -17,7 +17,7 @@ function deleteEmployee(e) {
   };
 
   $.ajax({
-    url: '../validation/event_registration_validation.php', // server url
+    url: '../validation/employee-delete-validate.php', // server url
     type: 'POST',
     // async: 'false',
     data: formData,
