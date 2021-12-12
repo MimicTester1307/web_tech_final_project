@@ -1,5 +1,5 @@
 <?php
-require "database_credentials.php";
+require "../database_interactions/database_credentials.php";
 
 class Database
 {

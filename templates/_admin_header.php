@@ -45,9 +45,9 @@ $title = $title ?? "Admin Page";
                             <i class="bi bi-person-fill"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="../admin_access/logout.php">Logout</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -112,7 +112,7 @@ $title = $title ?? "Admin Page";
                     </li>
 
                     <li>
-                        <a href="employee.php" class="nav-link px-3 active">
+                        <a href="../admin_access/employee.php" class="nav-link px-3 active">
                             <span class="me-2">
                                 <i class="bi bi-people-fill"></i>
                             </span>

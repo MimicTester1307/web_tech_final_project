@@ -12,7 +12,7 @@ if (isset($_SESSION["admin-id"]) && isset($_POST["employeeId"])) {
 
     $fileName = "../hidden_details/deletedEmployeeData.json";
     // Save the employee data to a file
-    $isFileWritten = file_put_contents("$fileName", $deletedEmployeeJsonData, FILE_APPEND);
+    $isFileWritten = file_put_contents("$fileName", $deletedEmployeeJsonData);
 
     // 'Delete' the data from database only if data has been written to file
     if ($isFileWritten) {

@@ -2,7 +2,7 @@
 
 use phpDocumentor\Reflection\Types\Null_;
 
-require "database_connection.php";
+require "../database_interactions/database_connection.php";
 
 /**
  * This class controls the operations performed on the database
@@ -121,7 +121,7 @@ class CRUD extends Database
 }
 
 
-$id = 3;
+// $id = 3;
 // $first_name = "Excel";
 // $last_name = "Chukwu";
 // $email = "excel.chukwu@ashesi.edu.gh";

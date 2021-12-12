@@ -1,5 +1,5 @@
 <?php
-require "CRUD.php";
+require "../database_interactions/CRUD.php";
 
 /**
  * This file is the controller file that serves as the intermediate 
