@@ -33,3 +33,6 @@ Each folder is arranged according to functionality
 
 #### index.php
 - serves as '/'
+
+
+## Code functionalities are documented within the code as needed.
