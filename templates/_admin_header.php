@@ -24,7 +24,7 @@ $title = $title ?? "Admin Page";
             <button class="navbar-toggler me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand me-auto" href="../admin_access/admin_index.php">
+            <a class="navbar-brand me-auto" href="../admin_access/index.php">
                 <img src="../assets/Logo+-+Star+Lab+Wind+River+Knockout.png" alt="Logo" width="240" height="53.91">
             </a>
 

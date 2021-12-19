@@ -3,4 +3,3 @@ sql_stubs.txt
 composer.lock
 vendor
 .phpunit.result.cache
-hidden_details
