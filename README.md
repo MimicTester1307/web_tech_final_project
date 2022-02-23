@@ -38,4 +38,4 @@ Each folder is arranged according to functionality
 ## Code functionalities are documented within the code as needed.
 
 ## Live Link
-Code was hosted on Azure at http://20.108.172.157/web_tech_final_project (for public pages) and http://20.108.172.157/web_tech_final_project/admin_access (for admin pages). Student credit will expire in the future though, which would render the site inaccessible.
+Code was hosted on Azure at http://20.108.172.157/web_tech_final_project (for public pages) and http://20.108.172.157/web_tech_final_project/admin_access (for admin pages). Student credit could expire in the future though, which would render the site inaccessible.
