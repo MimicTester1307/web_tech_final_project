@@ -1,4 +1,4 @@
-Repository for 2021 Web Technologies Final Project by
+Repository for 2021 Web Technologies Final Project (titled StarLab) by
 ## Excel Chukwu
 
 # Code Structure
